@@ -33,7 +33,7 @@ exports.update = function (req, res) {
 }
 
 exports.showAdd = function (req, res) {
-    res.render('isue')
+    res.render('issue')
 }
 
 exports.add = function (req, res) {
@@ -53,7 +53,7 @@ exports.add = function (req, res) {
 
 exports.delete = function (req, res, next) {
     req.getConnection(function(err, connection){
-        connection.query("delete from isues where id = ?", req.params.id, function(err, results){
+        connection.query("delete from issues where id = ?", req.params.id, function(err, results){
             //if (err) return next(err);
             res.redirect('/issues')
         });
